@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteproductos" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="69293965-24da-4d94-ac33-e7bc10b85794">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     productos.`idproducto` AS productos_idproducto,
+     productos.`prodnombre` AS productos_prodnombre,
+     productos.`prodcantidad` AS productos_prodcantidad,
+     productos.`prodprecio` AS productos_prodprecio,
+     productos.`prodescuento` AS productos_prodescuento,
+     productos.`prodexistencia` AS productos_prodexistencia,
+     productos.`idcategoria` AS productos_idcategoria,
+     productos.`catnombre` AS productos_catnombre,
+     productos.`catdescripcion` AS productos_catdescripcion
+FROM
+     `productos` productos]]>
+	</queryString>
+	<field name="productos_idproducto" class="java.lang.String"/>
+	<field name="productos_prodnombre" class="java.lang.String"/>
+	<field name="productos_prodcantidad" class="java.lang.Integer"/>
+	<field name="productos_prodprecio" class="java.lang.Double"/>
+	<field name="productos_prodescuento" class="java.lang.Integer"/>
+	<field name="productos_prodexistencia" class="java.lang.Integer"/>
+	<field name="productos_idcategoria" class="java.lang.String"/>
+	<field name="productos_catnombre" class="java.lang.String"/>
+	<field name="productos_catdescripcion" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="158" y="23" width="256" height="36" uuid="9a7eb612-b7d9-447a-8ea3-2b4accfb628a"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte de Productos]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy h.mm a">
+				<reportElement x="472" y="59" width="100" height="20" uuid="faf6a86f-6cea-46ac-a13b-0e4d7760ef01"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="64472c68-13b4-4d2d-a588-f4680cdfb9e8"/>
+				<text><![CDATA[ID Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="133" height="22" uuid="40367a72-19e7-4c88-a30f-658bba0c7ee5"/>
+				<text><![CDATA[Nombre del Producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="233" y="0" width="100" height="22" uuid="51f9477b-dbe1-4aca-bb4e-52974775222d"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="100" height="22" uuid="23e846a0-bcfa-4038-a715-e7cef023b85d"/>
+				<text><![CDATA[Precio]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="3" width="100" height="20" uuid="e661fc07-6053-4352-b3ca-911022410252"/>
+				<textFieldExpression><![CDATA[$F{productos_idproducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="3" width="133" height="20" uuid="4e8af055-f2fe-4b7f-84f8-4dbddf1972ee"/>
+				<textFieldExpression><![CDATA[$F{productos_prodnombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="233" y="3" width="100" height="20" uuid="df640d33-eb4e-48d5-b024-5cd6b2c01295"/>
+				<textFieldExpression><![CDATA[$F{productos_prodcantidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="3" width="100" height="20" uuid="7215c2dc-8a63-4986-a617-fc4d3b6767d2"/>
+				<textFieldExpression><![CDATA[$F{productos_prodprecio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
