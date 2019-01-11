@@ -62,7 +62,7 @@ public final class splash extends javax.swing.JFrame implements Runnable{
         
                 if(cn==null){
             //JOptionPane.showMessageDialog(null,"Ocurrio un problema al intentar conectar con la base de datos!");
-            AbrirXampp();
+//            AbrirXampp();
             Tiempo = 4000;
             System.out.println(" ");
             System.out.println("=======================================================");
